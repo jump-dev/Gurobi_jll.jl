@@ -9,6 +9,8 @@ JLLWrappers.@declare_executable_product(grbgetkey)
 
 function __init__()
     JLLWrappers.@generate_init_header()
+    # There's a permission error with the conda binaries
+    chmod(dirname(dirname(artifact_dir)), 0o755; recursive = true)
     JLLWrappers.@init_library_product(
         libgurobi,
         "gurobi110.dll",
