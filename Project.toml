@@ -1,0 +1,15 @@
+name = "Gurobi_jll"
+uuid = "c018c7e6-a5b0-4aea-8f80-9c1ef9991411"
+authors = ["odow <o.dowson@gmail.com>"]
+version = "11.0.0"
+
+[deps]
+Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
+JLLWrappers = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+
+[compat]
+JLLWrappers = "1.2.0"
+julia = "1.6"
+Libdl = "1"
+Artifacts = "1"
