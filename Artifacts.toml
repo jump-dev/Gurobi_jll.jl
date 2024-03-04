@@ -12,22 +12,22 @@
 # ```
 
 [[Gurobi]]
-git-tree-sha1 = "b0b358d767266ada3d935f0094b8ab1888d5cdf8"
+git-tree-sha1 = "36a8285f1cbeba8cd68449b693be31cdfa4272cd"
 os = "linux"
 arch = "x86_64"
 
     [[Gurobi.download]]
     url = "https://anaconda.org/Gurobi/gurobi/11.0.0/download/linux-64/gurobi-11.0.0-py311_0.tar.bz2"
-    sha256 = "941ed0aff7a7d36177b8cd4226a4f68a332ee25105d108de0025a3cef0633e04"
+    sha256 = "025d9ff1024a5293a64f33b1b198f36bc680c27ddc4d59fdf19f559674846e44"
 
 [[Gurobi]]
-git-tree-sha1 = "b0b358d767266ada3d935f0094b8ab1888d5cdf8"
+git-tree-sha1 = "5a3b623cd7ac3c59c02bb5063b4db60287f33a1f"
 os = "macos"
 arch = "x86_64"
 
     [[Gurobi.download]]
     url = "https://anaconda.org/Gurobi/gurobi/11.0.0/download/osx-64/gurobi-11.0.0-py311_0.tar.bz2"
-    sha256 = "941ed0aff7a7d36177b8cd4226a4f68a332ee25105d108de0025a3cef0633e04"
+    sha256 = "8e7dce3f62029b62beb867ce4ca9a2408a9848f93d784f8530661d32ef3f9acb"
 
 [[Gurobi]]
 git-tree-sha1 = "b0b358d767266ada3d935f0094b8ab1888d5cdf8"
