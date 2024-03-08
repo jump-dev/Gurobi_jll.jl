@@ -7,10 +7,20 @@ using Test
 
 import Gurobi_jll
 
-@test Gurobi_jll.is_available()
+@testset "is_available" begin
+    @test Gurobi_jll.is_available()
+end
 
 @testset "check_path_is_string" begin
     @test Gurobi_jll.libgurobi_path isa String
     @test Gurobi_jll.gurobi_cl_path isa String
     @test Gurobi_jll.grbgetkey_path isa String
+end
+
+@testset "gurobi_cl" begin
+    contents = sprint() do io
+        return run(pipeline(`$(Gurobi_jll.gurobi_cl()) -v`, stdout = io))
+    end
+    @show contents
+    @test occursin("Gurobi Optimizer", contents)
 end
