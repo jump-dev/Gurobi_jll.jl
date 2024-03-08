@@ -5,7 +5,7 @@
 
 using Test
 
-import Gurobi_jll
+using Gurobi_jll
 
 @testset "is_available" begin
     @test Gurobi_jll.is_available()
@@ -14,7 +14,7 @@ end
 @testset "libgurobi" begin
     @test Gurobi_jll.libgurobi_path isa String
     majorP, minorP, technicalP = Ref{Cint}(), Ref{Cint}(), Ref{Cint}()
-    @ccall Gurobi_jll.libgurobi.GRBversion(
+    @ccall libgurobi.GRBversion(
         majorP::Ptr{Cint},
         minorP::Ptr{Cint},
         technicalP::Ptr{Cint},
@@ -27,10 +27,11 @@ end
 
 @testset "gurobi_cl" begin
     @test Gurobi_jll.gurobi_cl_path isa String
-    contents = sprint() do io
-        return run(pipeline(`$(Gurobi_jll.gurobi_cl()) -v`, stdout = io))
-    end
-    if !Sys.iswindows()
+    contents = sprint(io -> run(pipeline(`$(gurobi_cl()) -v`, stdout = io)))
+    if Sys.iswindows()
+        # Is there an issue flushing `io`? Returns `""`
+        @test contents == ""
+    else
         @test occursin("Gurobi Optimizer", contents)
     end
 end
