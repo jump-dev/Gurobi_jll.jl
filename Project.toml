@@ -11,8 +11,8 @@ Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 [compat]
 Artifacts = "1"
 JLLWrappers = "1.2.0"
-Libdl = "1"
-Test = "1"
+Libdl = "<0.0.1, 1"
+Test = "<0.0.1, 1"
 julia = "1.6"
 
 [extras]
