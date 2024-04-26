@@ -39,3 +39,13 @@ end
 @testset "grbgetkey" begin
     @test Gurobi_jll.grbgetkey_path isa String
 end
+
+@testset "license_error" begin
+    envptr = Ref{Ptr{Cvoid}}()
+    error = @ccall libgurobi.GRBemptyenv(envptr::Ptr{Ptr{Cvoid}})::Cint
+    @test error == 0
+    error = @ccall libgurobi.GRBstartenv(envptr.x::Ptr{Cvoid})::Cint
+    @test error == 10009
+    msg = unsafe_string(@ccall libgurobi.GRBgeterrormsg(envptr.x::Ptr{Cvoid})::Ptr{Cchar})
+    @test startswith(msg, "No Gurobi license found")
+end
