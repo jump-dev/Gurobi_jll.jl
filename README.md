@@ -15,11 +15,20 @@ product of Gurobi.
 The underlying solver is a closed-source commercial product for which you must
 [purchase a license](https://www.gurobi.com).
 
+The Gurobi artifacts that are automatically downloaded on install are governed
+by the [Gurobi EULA](https://www.gurobi.com/EULA). When installing `Gurobi_jll`,
+you accept the EULA.
+
+`Gurobi_jll` includes a number of open source libraries. The licenses for these
+dependencies can be found in the `share/doc` directory of the downloaded artifact
+(see `Gurobi_jll.artifact_dir` for the directory).
+
 ## Platforms
 
 `Gurobi_jll.jl` is available for the following platforms:
 
 * `macOS x86_64` (`x86_64-apple-darwin`)
+* `macOS aarch64` (`aarch64-apple-darwin`)
 * `Linux x86_64` (`x86_64-linux-gnu`)
 * `Windows x86_64` (`x86_64-w64-mingw32`)
 
