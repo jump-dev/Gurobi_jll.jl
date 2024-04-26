@@ -22,6 +22,10 @@ function __init__()
     )
     JLLWrappers.@init_executable_product(gurobi_cl, "bin/gurobi_cl")
     JLLWrappers.@init_executable_product(grbgetkey, "bin/grbgetkey")
+    gurobi_lic = joinpath(artifact_dir, "lib", "gurobi.lic")
+    if isfile(gurobi_lic)
+        rm(gurobi_lic; force = true)
+    end
     JLLWrappers.@generate_init_footer()
     return
 end  # __init__()
