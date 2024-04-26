@@ -44,8 +44,8 @@ end
     envptr = Ref{Ptr{Cvoid}}()
     error = @ccall libgurobi.GRBemptyenv(envptr::Ptr{Ptr{Cvoid}})::Cint
     @test error == 0
-    error = @ccall libgurobi.GRBstartenv(envptr.x::Ptr{Cvoid})::Cint
+    error = @ccall libgurobi.GRBstartenv(envptr[]::Ptr{Cvoid})::Cint
     @test error == 10009
-    msg = unsafe_string(@ccall libgurobi.GRBgeterrormsg(envptr.x::Ptr{Cvoid})::Ptr{Cchar})
+    msg = unsafe_string(@ccall libgurobi.GRBgeterrormsg(envptr[]::Ptr{Cvoid})::Ptr{Cchar})
     @test startswith(msg, "No Gurobi license found")
 end
