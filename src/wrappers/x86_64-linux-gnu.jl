@@ -3,8 +3,6 @@
 # Use of this source code is governed by an MIT-style license that can be found
 # in the LICENSE.md file or at https://opensource.org/licenses/MIT.
 
-using Artifacts
-
 export gurobi_cl, grbgetkey, libgurobi
 
 JLLWrappers.@generate_wrapper_header("Gurobi")
@@ -24,7 +22,10 @@ function __init__()
     )
     JLLWrappers.@init_executable_product(gurobi_cl, "bin/gurobi_cl")
     JLLWrappers.@init_executable_product(grbgetkey, "bin/grbgetkey")
-    rm(joinpath(artifact"Gurobi", "lib/gurobi.lic"), force=true)
+    gurobi_lic = joinpath(artifact_dir, "lib", "gurobi.lic")
+    if isfile(gurobi_lic)
+        rm(gurobi_lic; force = true)
+    end
     JLLWrappers.@generate_init_footer()
     return
 end  # __init__()
