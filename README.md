@@ -10,7 +10,17 @@ product of Gurobi.
 
 ## License
 
-`Gurobi_jll.jl` is licensed under the [MIT License](https://github.com/jump-dev/Gurobi_jll.jl/blob/master/LICENSE.md).
+The Julia source code in `Gurobi_jll.jl` is licensed under the
+[MIT License](https://github.com/jump-dev/Gurobi_jll.jl/blob/master/LICENSE.md).
+
+The Gurobi artifacts that are automatically downloaded on install are governed
+by the [Gurobi EULA](https://www.gurobi.com/EULA). When installing `Gurobi_jll`,
+you accept the terms of this agreement.
+
+A copy of the license agreement is stored at `share/doc/gurobi/EULA.pdf` in the
+installed artifact. Copies of the licenses of third-party software used in the
+Gurobi libraries are provided in `share/doc/gurobi/refman/copyright_notices_for_3rd_.html`
+in the installed artifact, which is located at `Gurobi_jll.artifact_dir`.
 
 The underlying solver is a closed-source commercial product for which you must
 [purchase a license](https://www.gurobi.com).
@@ -20,6 +30,7 @@ The underlying solver is a closed-source commercial product for which you must
 `Gurobi_jll.jl` is available for the following platforms:
 
 * `macOS x86_64` (`x86_64-apple-darwin`)
+* `macOS arm64` (`aarch64-apple-darwin`)
 * `Linux x86_64` (`x86_64-linux-gnu`)
 * `Windows x86_64` (`x86_64-w64-mingw32`)
 
