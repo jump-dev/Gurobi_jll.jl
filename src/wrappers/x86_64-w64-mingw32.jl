@@ -7,7 +7,7 @@ export gurobi_cl, grbgetkey, libgurobi
 
 JLLWrappers.@generate_wrapper_header("Gurobi")
 
-JLLWrappers.@declare_library_product(libgurobi, "gurobi95.dll")
+JLLWrappers.@declare_library_product(libgurobi, "gurobi100.dll")
 
 JLLWrappers.@declare_executable_product(gurobi_cl)
 
@@ -19,7 +19,7 @@ function __init__()
     chmod(dirname(dirname(artifact_dir)), 0o755; recursive = true)
     JLLWrappers.@init_library_product(
         libgurobi,
-        "gurobi95.dll",
+        "gurobi100.dll",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
     JLLWrappers.@init_executable_product(gurobi_cl, "gurobi_cl.exe")
