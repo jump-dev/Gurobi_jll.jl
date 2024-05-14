@@ -1,7 +1,7 @@
 name = "Gurobi_jll"
 uuid = "c018c7e6-a5b0-4aea-8f80-9c1ef9991411"
 authors = ["odow <o.dowson@gmail.com>"]
-version = "11.0.1"
+version = "11.0.1+1"
 
 [deps]
 Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
