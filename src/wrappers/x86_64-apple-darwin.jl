@@ -14,12 +14,12 @@ JLLWrappers.@declare_executable_product(gurobi_cl)
 JLLWrappers.@declare_executable_product(grbgetkey)
 
 function __init__()
+    JLLWrappers.@generate_init_header()
     # This is needed to work-around a permission issue on some intel macs.
     # See Gurobi.jl#545 for details.
     libgurobi_path = joinpath(artifact_dir, "lib", "libgurobi110.dylib")
     run(`codesign --remove-signature $libgurobi_path`)
     # Back to the standard header
-    JLLWrappers.@generate_init_header()
     JLLWrappers.@init_library_product(
         libgurobi,
         "lib/libgurobi110.dylib",
