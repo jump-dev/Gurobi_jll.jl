@@ -15,6 +15,11 @@ JLLWrappers.@declare_executable_product(grbgetkey)
 
 function __init__()
     JLLWrappers.@generate_init_header()
+    # This is needed to work-around a permission issue on some intel macs.
+    # See Gurobi.jl#545 for details.
+    libgurobi_path = joinpath(artifact_dir, "lib", "libgurobi110.dylib")
+    run(`codesign --remove-signature $libgurobi_path`)
+    # Back to the standard header
     JLLWrappers.@init_library_product(
         libgurobi,
         "lib/libgurobi110.dylib",
@@ -22,6 +27,7 @@ function __init__()
     )
     JLLWrappers.@init_executable_product(gurobi_cl, "bin/gurobi_cl")
     JLLWrappers.@init_executable_product(grbgetkey, "bin/grbgetkey")
+    # The standard license supports only Python installs. Remove it.
     gurobi_lic = joinpath(artifact_dir, "lib", "gurobi.lic")
     if isfile(gurobi_lic)
         rm(gurobi_lic; force = true)
