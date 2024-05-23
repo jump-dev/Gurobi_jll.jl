@@ -49,3 +49,7 @@ end
     msg = unsafe_string(@ccall libgurobi.GRBgeterrormsg(envptr[]::Ptr{Cvoid})::Ptr{Cchar})
     @test startswith(msg, "No Gurobi license found")
 end
+
+@testset "open_documentation" begin
+    Gurobi_jll.open_documentation()
+end
