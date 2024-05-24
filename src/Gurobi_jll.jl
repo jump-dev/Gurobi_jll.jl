@@ -15,7 +15,11 @@ JLLWrappers.@generate_main_file_header("Gurobi")
 JLLWrappers.@generate_main_file("Gurobi", UUID("c018c7e6-a5b0-4aea-8f80-9c1ef9991411"))
 
 function get_documentation_path()
-    path = joinpath("share", "doc", "gurobi", "refman", "index.html")
+    path = @static if Sys.iswindows()
+        joinpath("Doc", "Gurobi", "refman", "index.html")
+    else
+        joinpath("share", "doc", "gurobi", "refman", "index.html")
+    end
     return joinpath(artifact_dir, path)
 end
 
