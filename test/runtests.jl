@@ -59,7 +59,7 @@ end
         Gurobi_jll.open_documentation()
     elseif Sys.iswindows()
         @test Gurobi_jll._browser_command("abc") == `cmd /c start abc`
-        # Gurobi_jll.open_documentation()  # Errors in CI
+        Gurobi_jll.open_documentation()
     else
         @test Gurobi_jll._browser_command("abc") == `xdg-open abc`
         # Gurobi_jll.open_documentation()  # Errors in CI
