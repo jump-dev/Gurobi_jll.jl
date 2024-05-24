@@ -14,23 +14,27 @@ JLLWrappers.@generate_main_file_header("Gurobi")
 
 JLLWrappers.@generate_main_file("Gurobi", UUID("c018c7e6-a5b0-4aea-8f80-9c1ef9991411"))
 
+function get_documentation_path()
+    path = joinpath("share", "doc", "gurobi", "refman", "index.html")
+    return joinpath(artifact_dir, path)
+end
+
+function _browser_command(path::String)
+    @static if Sys.isapple()
+        return `open $path`
+    elseif Sys.iswindows()
+        return `cmd /c start $path`
+    else
+        @assert Sys.islinux()
+        return `xdg-open $path`
+    end
+end
+
 """
     open_documentation()
 
 Open a local copy of the Gurobi documentation in your browser.
 """
-function open_documentation()
-    relative_path = joinpath("share", "doc", "gurobi", "refman", "index.html")
-    path = joinpath(artifact_dir, relative_path)
-    @static if Sys.isapple()
-        run(`open $path`)
-    elseif Sys.iswindows()
-        run(`cmd /c start $path`)
-    else
-        @assert Sys.islinux()
-        run(`xdg-open $path`)
-    end
-    return
-end
+open_documentation() = run(_browser_command(get_documentation_path()))
 
 end  # module Gurobi_jll
