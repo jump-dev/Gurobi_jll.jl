@@ -2,6 +2,7 @@
 git-tree-sha1 = "1cf3993225db760f620b7a50047dda0abc07e2a1"
 arch = "x86_64"
 os = "linux"
+lazy = true
 
     [[Gurobi.download]]
     sha256 = "ad5509a74e6eb75a34c43d5cd1017722430881113dcaf335fa0e057359bdbe50"
@@ -10,6 +11,7 @@ os = "linux"
 git-tree-sha1 = "c6002a5d5f15ef98c2821ea90c04c1ce087df37f"
 arch = "x86_64"
 os = "macos"
+lazy = true
 
     [[Gurobi.download]]
     sha256 = "c740302ee24d035b314188ba6b24a4c47c2bc5d594f0f1d2d34ed5ec36b1ea76"
@@ -18,6 +20,7 @@ os = "macos"
 git-tree-sha1 = "4f276549146c3ac663c68db6fc5496497cdbd50a"
 arch = "aarch64"
 os = "macos"
+lazy = true
 
     [[Gurobi.download]]
     sha256 = "2fb9b0a79f9e9ab623c950d1cbbec91a0d403fa4d37741a640ab0e2dc0c1ae58"
@@ -26,6 +29,7 @@ os = "macos"
 git-tree-sha1 = "3ac0916a338e11669ea3a0ec6074115e5dae5eb0"
 arch = "x86_64"
 os = "windows"
+lazy = true
 
     [[Gurobi.download]]
     sha256 = "f17e1ba56d1ce26cbf6ee40835a21203c133fdb3045ffc0dd94939542542597d"
