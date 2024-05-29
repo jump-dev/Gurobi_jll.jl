@@ -9,6 +9,7 @@ baremodule Gurobi_jll
 using Base
 using Base: UUID
 import JLLWrappers
+import LazyArtifacts
 
 JLLWrappers.@generate_main_file_header("Gurobi")
 
