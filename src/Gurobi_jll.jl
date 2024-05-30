@@ -3,6 +3,12 @@
 # Use of this source code is governed by an MIT-style license that can be found
 # in the LICENSE.md file or at https://opensource.org/licenses/MIT.
 
+# We don't want to precompile Gurobi_jll, so that the LazyArtifacts are
+# downloaded only during the first instance of `using Gurobi_jll`. This means,
+# for example, that they won't be downloaded by Gurobi.jl if someone has a local
+# install.
+__precompile__(false)
+
 # Use baremodule to shave off a few KB from the serialized `.ji` file
 baremodule Gurobi_jll
 
