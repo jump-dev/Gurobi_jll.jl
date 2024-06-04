@@ -7,6 +7,7 @@
 # downloaded only during the first instance of `using Gurobi_jll`. This means,
 # for example, that they won't be downloaded by Gurobi.jl if someone has a local
 # install.
+# See https://github.com/jump-dev/Gurobi_jll.jl/pull/18 for details.
 
 @static if get(ENV, "GUROBI_JL_USE_GUROBI_JLL", "true") == "false"
     __precompile__(false)
