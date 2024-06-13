@@ -21,9 +21,10 @@ function get_artifact(data; version::String, pyversion::String)
     return ret
 end
 
-function main(; version = "11.0.1", pyversion = "py311_0")
+function main(; version = "11.0.2", pyversion = "py311_0")
     platforms = [
         (os = "linux", arch = "x86_64", conda = "linux-64"),
+        (os = "linux", arch = "aarch64", conda = "linux-aarch64"),
         (os = "macos", arch = "x86_64", conda = "osx-64"),
         (os = "macos", arch = "aarch64", conda = "osx-arm64"),
         (os = "windows", arch = "x86_64", conda = "win-64"),
