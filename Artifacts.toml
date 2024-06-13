@@ -7,6 +7,14 @@ os = "linux"
     sha256 = "ad5509a74e6eb75a34c43d5cd1017722430881113dcaf335fa0e057359bdbe50"
     url = "https://anaconda.org/Gurobi/gurobi/11.0.2/download/linux-64/gurobi-11.0.2-py311_0.tar.bz2"
 [[Gurobi]]
+git-tree-sha1 = "85c79ce364ac145db080d4db6e5108a0c4bd8f72"
+arch = "aarch64"
+os = "linux"
+
+    [[Gurobi.download]]
+    sha256 = "ba305286f2d641f7e3e8d1938e5f6e7ac339c8729861959abc5c9de6cf7a0694"
+    url = "https://anaconda.org/Gurobi/gurobi/11.0.2/download/linux-aarch64/gurobi-11.0.2-py311_0.tar.bz2"
+[[Gurobi]]
 git-tree-sha1 = "c6002a5d5f15ef98c2821ea90c04c1ce087df37f"
 arch = "x86_64"
 os = "macos"
