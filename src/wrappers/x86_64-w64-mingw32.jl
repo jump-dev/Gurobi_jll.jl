@@ -19,7 +19,7 @@ function __init__()
     if isfile(gurobi_lic)
         rm(gurobi_lic; force = true)
         # While we're at it, there's a permission error with the conda binaries
-        chmod(dirname(dirname(artifact_dir)), 0o755; recursive = true)
+        chmod(artifact_dir, 0o755; recursive = true)
     end
     JLLWrappers.@init_library_product(
         libgurobi,
