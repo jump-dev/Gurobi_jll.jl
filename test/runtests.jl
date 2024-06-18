@@ -4,7 +4,7 @@
 # in the LICENSE.md file or at https://opensource.org/licenses/MIT.
 
 using Test
-
+using InteractiveUtils
 @time_imports using Gurobi_jll
 
 @testset "is_available" begin
