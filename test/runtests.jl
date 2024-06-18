@@ -4,12 +4,8 @@
 # in the LICENSE.md file or at https://opensource.org/licenses/MIT.
 
 using Test
-using InteractiveUtils
-@static if VERSION <= v"1.8"
-    using Gurobi_jll
-else
-    @time_imports using Gurobi_jll
-end
+
+using Gurobi_jll
 
 @testset "is_available" begin
     @test Gurobi_jll.is_available()

@@ -1,7 +1,7 @@
 name = "Gurobi_jll"
 uuid = "c018c7e6-a5b0-4aea-8f80-9c1ef9991411"
 authors = ["odow <o.dowson@gmail.com>"]
-version = "11.0.2+1"
+version = "11.0.2+2"
 
 [deps]
 Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
@@ -16,8 +16,7 @@ Test = "<0.0.1, 1"
 julia = "1.6"
 
 [extras]
-InteractiveUtils = "b77e0a4c-d291-57a0-90e8-8db25a27a240"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["InteractiveUtils", "Test"]
+test = ["Test"]
