@@ -5,7 +5,7 @@
 
 using Test
 
-using Gurobi_jll
+@time_imports using Gurobi_jll
 
 @testset "is_available" begin
     @test Gurobi_jll.is_available()
