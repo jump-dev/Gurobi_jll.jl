@@ -29,8 +29,8 @@ end
     @test Gurobi_jll.gurobi_cl_path isa String
     contents = sprint(io -> run(pipeline(`$(gurobi_cl()) -v`, stdout = io)))
     if Sys.iswindows()
-        # Is there an issue flushing `io`? Returns `""`
-        @test contents == ""
+        # Is there an issue flushing `io`? Some versions return `""`
+        @test occursin("Gurobi Optimizer", contents) || isempty(contents)
     else
         @test occursin("Gurobi Optimizer", contents)
     end
