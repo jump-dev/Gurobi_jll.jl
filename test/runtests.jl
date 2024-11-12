@@ -20,9 +20,9 @@ end
         technicalP::Ptr{Cint},
     )::Cvoid
     # Update these values when you update Artifacts.toml
-    @test majorP[] == 11
+    @test majorP[] == 12
     @test minorP[] == 0
-    @test technicalP[] == 3
+    @test technicalP[] == 0
 end
 
 @testset "gurobi_cl" begin
