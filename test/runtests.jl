@@ -53,17 +53,3 @@ end
         @test startswith(unsafe_string(ret), "No Gurobi license found")
     end
 end
-
-@testset "open_documentation" begin
-    @test isfile(Gurobi_jll.get_documentation_path())
-    if Sys.isapple()
-        @test Gurobi_jll._browser_command("abc") == `open abc`
-        Gurobi_jll.open_documentation()
-    elseif Sys.iswindows()
-        @test Gurobi_jll._browser_command("abc") == `cmd /c start abc`
-        Gurobi_jll.open_documentation()
-    else
-        @test Gurobi_jll._browser_command("abc") == `xdg-open abc`
-        # Gurobi_jll.open_documentation()  # Errors in CI
-    end
-end
