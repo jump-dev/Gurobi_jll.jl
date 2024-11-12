@@ -42,7 +42,9 @@ end
 
 @testset "license_error" begin
     envptr = Ref{Ptr{Cvoid}}()
-    error = @ccall libgurobi.GRBemptyenv(envptr::Ptr{Ptr{Cvoid}})::Cint
+    # Temporary workaround for 12.0.0. This can be reverted to use GRBemptyenv for 12.0.1
+    # https://docs.gurobi.com/projects/optimizer/en/12.0/reference/releasenotes/knownbugs.html
+    error = @ccall libgurobi.GRBemptyenvinternal(envptr::Ptr{Ptr{Cvoid}}, 12, 0, 0)::Cint
     @test error == 0
     error = @ccall libgurobi.GRBstartenv(envptr[]::Ptr{Cvoid})::Cint
     @test error == 10009 || error == 0
