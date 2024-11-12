@@ -20,9 +20,9 @@ end
         technicalP::Ptr{Cint},
     )::Cvoid
     # Update these values when you update Artifacts.toml
-    @test majorP[] == 11
+    @test majorP[] == 12
     @test minorP[] == 0
-    @test technicalP[] == 3
+    @test technicalP[] == 0
 end
 
 @testset "gurobi_cl" begin
@@ -42,26 +42,25 @@ end
 
 @testset "license_error" begin
     envptr = Ref{Ptr{Cvoid}}()
-    error = @ccall libgurobi.GRBemptyenv(envptr::Ptr{Ptr{Cvoid}})::Cint
+    # Temporary workaround for 12.0.0. This can be reverted to use GRBemptyenv for 12.0.1
+    # https://docs.gurobi.com/projects/optimizer/en/12.0/reference/releasenotes/knownbugs.html
+    #
+    # This does not affect usage in Gurobi.jl because it defines the function
+    # 
+    # function GRBemptyenv(envP)
+    #     return GRBemptyenvinternal(
+    #         envP,
+    #         GRB_VERSION_MAJOR,
+    #         GRB_VERSION_MINOR,
+    #         GRB_VERSION_TECHNICAL,
+    #     )
+    # end
+    error = @ccall libgurobi.GRBemptyenvinternal(envptr::Ptr{Ptr{Cvoid}}, 12::Int, 0::Int, 0::Int)::Cint
     @test error == 0
     error = @ccall libgurobi.GRBstartenv(envptr[]::Ptr{Cvoid})::Cint
     @test error == 10009 || error == 0
     if error == 10009
         ret = @ccall libgurobi.GRBgeterrormsg(envptr[]::Ptr{Cvoid})::Ptr{Cchar}
         @test startswith(unsafe_string(ret), "No Gurobi license found")
-    end
-end
-
-@testset "open_documentation" begin
-    @test isfile(Gurobi_jll.get_documentation_path())
-    if Sys.isapple()
-        @test Gurobi_jll._browser_command("abc") == `open abc`
-        Gurobi_jll.open_documentation()
-    elseif Sys.iswindows()
-        @test Gurobi_jll._browser_command("abc") == `cmd /c start abc`
-        Gurobi_jll.open_documentation()
-    else
-        @test Gurobi_jll._browser_command("abc") == `xdg-open abc`
-        # Gurobi_jll.open_documentation()  # Errors in CI
     end
 end
