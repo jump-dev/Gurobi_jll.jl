@@ -44,7 +44,7 @@ end
     envptr = Ref{Ptr{Cvoid}}()
     # Temporary workaround for 12.0.0. This can be reverted to use GRBemptyenv for 12.0.1
     # https://docs.gurobi.com/projects/optimizer/en/12.0/reference/releasenotes/knownbugs.html
-    error = @ccall libgurobi.GRBemptyenvinternal(envptr::Ptr{Ptr{Cvoid}}, 12, 0, 0)::Cint
+    error = @ccall libgurobi.GRBemptyenvinternal(envptr::Ptr{Ptr{Cvoid}}, 12::Int, 0::Int, 0::Int)::Cint
     @test error == 0
     error = @ccall libgurobi.GRBstartenv(envptr[]::Ptr{Cvoid})::Cint
     @test error == 10009 || error == 0
