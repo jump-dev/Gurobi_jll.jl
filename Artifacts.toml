@@ -1,40 +1,40 @@
 [[Gurobi]]
-git-tree-sha1 = "b67e015d04c7a09b09eb20e68003c0d8f0f553aa"
+git-tree-sha1 = "11003004a058f577cdef79520ad31a3cc1dc4141"
 arch = "x86_64"
 os = "linux"
 
     [[Gurobi.download]]
-    sha256 = "ab4bd4f6d0bf9c157b88aa5ecb2d540c25db3136a18708f76e5cfe097b14bf96"
-    url = "https://anaconda.org/Gurobi/gurobi/12.0.1/download/linux-64/gurobi-12.0.1-py311_0.tar.bz2"
+    sha256 = "0b5d30a1942b1ffcc95a2a534a2862cea4fdb55167bbeb180e8f0059cff42c42"
+    url = "https://anaconda.org/Gurobi/gurobi/12.0.2/download/linux-64/gurobi-12.0.2-py311_0.tar.bz2"
 [[Gurobi]]
-git-tree-sha1 = "2af62caa2b262146eac8c3aa062e092162fa2902"
+git-tree-sha1 = "76aeddac9f2b5a7e57006527a258705e757878a0"
 arch = "aarch64"
 os = "linux"
 
     [[Gurobi.download]]
-    sha256 = "820da64c9811bf8aef865f9bff68316fdae8eaeebd106a713dd7106b404e40d8"
-    url = "https://anaconda.org/Gurobi/gurobi/12.0.1/download/linux-aarch64/gurobi-12.0.1-py311_0.tar.bz2"
+    sha256 = "8eb36547ddc3335f7159d4d9434da03484a5a55b909d9ba88de225a411831234"
+    url = "https://anaconda.org/Gurobi/gurobi/12.0.2/download/linux-aarch64/gurobi-12.0.2-py311_0.tar.bz2"
 [[Gurobi]]
-git-tree-sha1 = "3e6bd9b2e635d19543927edac92d91a93e25b134"
+git-tree-sha1 = "ab80340e5963eb728e5f19503af582e03ada648c"
 arch = "x86_64"
 os = "macos"
 
     [[Gurobi.download]]
-    sha256 = "15e84bcb97ebe887f25db227c5aa0b1ad412cbaafbe56e4d9527996ee55f2f6d"
-    url = "https://anaconda.org/Gurobi/gurobi/12.0.1/download/osx-64/gurobi-12.0.1-py311_0.tar.bz2"
+    sha256 = "79982a2010d83c09a00b8a23d2fa512ca8b58569aa6a26c606ec579b5e0d0260"
+    url = "https://anaconda.org/Gurobi/gurobi/12.0.2/download/osx-64/gurobi-12.0.2-py311_0.tar.bz2"
 [[Gurobi]]
-git-tree-sha1 = "c12b6e683e4bbd65613f4a5945c26ea1b24ea9ed"
+git-tree-sha1 = "abc28288bade7eb9781d0afb4c87576934d5c972"
 arch = "aarch64"
 os = "macos"
 
     [[Gurobi.download]]
-    sha256 = "41d19dd88acf3b636e218c30ce8c83add22c731012efce5a95b4f245ab4d9de5"
-    url = "https://anaconda.org/Gurobi/gurobi/12.0.1/download/osx-arm64/gurobi-12.0.1-py311_0.tar.bz2"
+    sha256 = "0e33fda299eb1fcfe8e010e11ee9ec45b07f49169911011fd110f3a00fbc944c"
+    url = "https://anaconda.org/Gurobi/gurobi/12.0.2/download/osx-arm64/gurobi-12.0.2-py311_0.tar.bz2"
 [[Gurobi]]
-git-tree-sha1 = "b0057ad48ecb7ab5ccba1d5d46298ef8c3c34b05"
+git-tree-sha1 = "e6550b9416d76c48d61f46fc45c0e3526d04cafd"
 arch = "x86_64"
 os = "windows"
 
     [[Gurobi.download]]
-    sha256 = "3ae0ecefd48c62289bce9627b7b6f3495d11827606977f62ce5c50f07605ebc3"
-    url = "https://anaconda.org/Gurobi/gurobi/12.0.1/download/win-64/gurobi-12.0.1-py311_0.tar.bz2"
+    sha256 = "6437067f38b732ac030c6d26e13d85cc9a76af0c201e3dbdc2887e6ab88cdf08"
+    url = "https://anaconda.org/Gurobi/gurobi/12.0.2/download/win-64/gurobi-12.0.2-py311_0.tar.bz2"
