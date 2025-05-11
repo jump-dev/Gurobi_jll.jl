@@ -22,7 +22,7 @@ end
     # Update these values when you update Artifacts.toml
     @test majorP[] == 12
     @test minorP[] == 0
-    @test technicalP[] == 1
+    @test technicalP[] == 2
 end
 
 @testset "gurobi_cl" begin
