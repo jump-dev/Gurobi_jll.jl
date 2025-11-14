@@ -5,9 +5,11 @@
 
 using Tar, Inflate, SHA, TOML
 
-function get_artifact(data; version::String, pyversion::String)
-    filename = "gurobi-$version-$pyversion.tar.bz2"
-    url = "https://anaconda.org/Gurobi/gurobi/$version/download/$(data.conda)/$filename"
+function get_artifact(data; version::String)
+    v = VersionNumber(version)
+    minorversion = "$(v.major).$(v.minor)"
+    filename = "gurobi$(version)_$(data.platform).tar.gz"
+    url = "https://packages.gurobi.com/$minorversion/gurobi$(version)_$(data.platform).tar.gz"
     run(`wget $url`)
     ret = Dict(
         "git-tree-sha1" => Tar.tree_hash(`gzcat $filename`),
@@ -21,15 +23,15 @@ function get_artifact(data; version::String, pyversion::String)
     return ret
 end
 
-function main(; version, pyversion = "py311_0")
+function main(; version)
     platforms = [
-        (os = "linux", arch = "x86_64", conda = "linux-64"),
-        (os = "linux", arch = "aarch64", conda = "linux-aarch64"),
-        (os = "macos", arch = "x86_64", conda = "osx-64"),
-        (os = "macos", arch = "aarch64", conda = "osx-arm64"),
-        (os = "windows", arch = "x86_64", conda = "win-64"),
+        (os = "linux", arch = "x86_64", platform = "linux64"),
+        (os = "linux", arch = "aarch64", platform = "armlinux64"),
+        (os = "macos", arch = "x86_64", platform = "macos_universal2"),
+        (os = "macos", arch = "aarch64", platform = "macos_universal2"),
+        (os = "windows", arch = "x86_64", platform = "win64"),
     ]
-    output = Dict("Gurobi" => get_artifact.(platforms; version, pyversion))
+    output = Dict("Gurobi" => get_artifact.(platforms; version))
     open(joinpath(dirname(@__DIR__), "Artifacts.toml"), "w") do io
         return TOML.print(io, output)
     end
