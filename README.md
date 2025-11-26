@@ -1,7 +1,7 @@
 # `Gurobi_jll.jl`
 
 `Gurobi_jll` is a JLL package manually built from the binaries at
-[https://anaconda.org/Gurobi/gurobi/files](https://anaconda.org/Gurobi/gurobi/files).
+[https://www.gurobi.com/downloads/](https://www.gurobi.com/downloads/).
 
 ## Affiliation
 
@@ -17,9 +17,9 @@ The Gurobi artifacts that are automatically downloaded on install are governed
 by the [Gurobi EULA](https://www.gurobi.com/EULA). When installing `Gurobi_jll`,
 you accept the terms of this agreement.
 
-A copy of the license agreement is stored at `share/doc/gurobi/EULA.pdf` in the
+A copy of the license agreement is stored at `gurobiXYZ/<platform>/EULA.pdf` in the
 installed artifact. Copies of the licenses of third-party software used in the
-Gurobi libraries are provided in `info/licenses/thirdparty` in the installed
+Gurobi libraries are provided in `gurobiXYZ/<platform>/licenses` in the installed
 artifact, which is located at `Gurobi_jll.artifact_dir`.
 
 The underlying solver is a closed-source commercial product for which you must
@@ -32,6 +32,7 @@ The underlying solver is a closed-source commercial product for which you must
 * `macOS x86_64` (`x86_64-apple-darwin`)
 * `macOS arm64` (`aarch64-apple-darwin`)
 * `Linux x86_64` (`x86_64-linux-gnu`)
+* `Linux arm64` (`aarch64-linux-gnu`)
 * `Windows x86_64` (`x86_64-w64-mingw32`)
 
 ## Products
