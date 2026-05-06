@@ -30,12 +30,13 @@ sedi() { sed -i '' "$@" 2>/dev/null || sed -i "$@"; }
 
 for f in "$REPO_ROOT/src/wrappers"/*.jl; do
     sedi \
-        -e "s/const GUROBI_DIR = \"gurobi[0-9]*\"/const GUROBI_DIR = \"gurobi${DIR_VER}\"/g" \
         -e "s/libgurobi[0-9]*\.so/libgurobi${LIB_VER}.so/g" \
         -e "s/libgurobi[0-9]*\.dylib/libgurobi${LIB_VER}.dylib/g" \
         -e "s/gurobi[0-9]*\.dll/gurobi${LIB_VER}.dll/g" \
         "$f"
 done
+
+sedi "s/const GUROBI_DIR = \"gurobi[0-9]*\"/const GUROBI_DIR = \"gurobi${DIR_VER}\"/g" "$REPO_ROOT/src/Gurobi_jll.jl"
 
 sedi "s/^version = \".*\"/version = \"${VERSION}\"/" "$REPO_ROOT/Project.toml"
 
