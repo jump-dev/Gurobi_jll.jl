@@ -12,7 +12,7 @@ function get_artifact(data; version::String)
     url = "https://packages.gurobi.com/$minorversion/gurobi$(version)_$(data.platform).tar.gz"
     run(`wget $url`)
     ret = Dict(
-        "git-tree-sha1" => Tar.tree_hash(`gzcat $filename`),
+        "git-tree-sha1" => Tar.tree_hash(`gzcat $filename`; skip_empty = true),
         "arch" => data.arch,
         "os" => data.os,
         "download" => Any[
