@@ -7,7 +7,7 @@ export gurobi_cl, grbgetkey, libgurobi
 
 JLLWrappers.@generate_wrapper_header("Gurobi")
 
-const GUROBI_DIR = "gurobi1301"
+const GUROBI_DIR = "gurobi1302"
 
 JLLWrappers.@declare_library_product(libgurobi, "libgurobi130.so")
 
