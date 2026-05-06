@@ -7,6 +7,8 @@ export gurobi_cl, grbgetkey, libgurobi
 
 JLLWrappers.@generate_wrapper_header("Gurobi")
 
+const GUROBI_DIR = "gurobi1301"
+
 JLLWrappers.@declare_library_product(libgurobi, "libgurobi130.so")
 
 JLLWrappers.@declare_executable_product(gurobi_cl)
@@ -17,11 +19,11 @@ function __init__()
     JLLWrappers.@generate_init_header()
     JLLWrappers.@init_library_product(
         libgurobi,
-        "gurobi1300/armlinux64/lib/libgurobi130.so",
+        "$GUROBI_DIR/armlinux64/lib/libgurobi130.so",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
-    JLLWrappers.@init_executable_product(gurobi_cl, "gurobi1300/armlinux64/bin/gurobi_cl")
-    JLLWrappers.@init_executable_product(grbgetkey, "gurobi1300/armlinux64/bin/grbgetkey")
+    JLLWrappers.@init_executable_product(gurobi_cl, "$GUROBI_DIR/armlinux64/bin/gurobi_cl")
+    JLLWrappers.@init_executable_product(grbgetkey, "$GUROBI_DIR/armlinux64/bin/grbgetkey")
     JLLWrappers.@generate_init_footer()
     return
 end  # __init__()
