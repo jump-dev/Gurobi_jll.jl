@@ -19,7 +19,7 @@ function get_artifact(data; version::String)
             Dict("sha256" => bytes2hex(open(sha256, filename)), "url" => url),
         ]
     )
-    # rm(filename)
+    rm(filename)
     return ret
 end
 
