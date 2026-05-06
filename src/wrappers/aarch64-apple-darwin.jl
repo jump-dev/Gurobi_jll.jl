@@ -7,6 +7,8 @@ export gurobi_cl, grbgetkey, libgurobi
 
 JLLWrappers.@generate_wrapper_header("Gurobi")
 
+const GUROBI_DIR = "gurobi1301"
+
 JLLWrappers.@declare_library_product(libgurobi, "@rpath/libgurobi130.dylib")
 
 JLLWrappers.@declare_executable_product(gurobi_cl)
@@ -17,11 +19,11 @@ function __init__()
     JLLWrappers.@generate_init_header()
     JLLWrappers.@init_library_product(
         libgurobi,
-        "gurobi1300/macos_universal2/lib/libgurobi130.dylib",
+        "$GUROBI_DIR/macos_universal2/lib/libgurobi130.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
-    JLLWrappers.@init_executable_product(gurobi_cl, "gurobi1300/macos_universal2/bin/gurobi_cl")
-    JLLWrappers.@init_executable_product(grbgetkey, "gurobi1300/macos_universal2/bin/grbgetkey")
+    JLLWrappers.@init_executable_product(gurobi_cl, "$GUROBI_DIR/macos_universal2/bin/gurobi_cl")
+    JLLWrappers.@init_executable_product(grbgetkey, "$GUROBI_DIR/macos_universal2/bin/grbgetkey")
     JLLWrappers.@generate_init_footer()
     return
 end  # __init__()
