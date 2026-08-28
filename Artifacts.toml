@@ -1,40 +1,40 @@
 [[Gurobi]]
-git-tree-sha1 = "4a520fab6df2bcf8b5bd7794f858af4dae787dd7"
+git-tree-sha1 = "1b5c4a597631092283e0c71596b2f708afc5054b"
 arch = "x86_64"
 os = "linux"
 
     [[Gurobi.download]]
-    sha256 = "cffd4ee3c1990294e80446626bd1772045e420d7c34c379839b6acca16f0a23b"
-    url = "https://packages.gurobi.com/13.0/gurobi13.0.2_linux64.tar.gz"
+    sha256 = "2e16903535a2db67c1be14f075dfa532cf1d4d5961d742d1f9894156d8f4c6f1"
+    url = "https://packages.gurobi.com/13.0/gurobi13.0.3_linux64.tar.gz"
 [[Gurobi]]
-git-tree-sha1 = "1db9dd68e32d50451dca12a922fa51e5d7e438b6"
+git-tree-sha1 = "2ed1993f1c4ad3ad1307aed8b625a8044d18965a"
 arch = "aarch64"
 os = "linux"
 
     [[Gurobi.download]]
-    sha256 = "3c50a31e20af6d7f815f0c77cad0461320bb5d1cd060c1f03d459a5b9b69c7ee"
-    url = "https://packages.gurobi.com/13.0/gurobi13.0.2_armlinux64.tar.gz"
+    sha256 = "f07970d38ede9925648475dab752b7a81c2f21854792773440b81f219d1a3224"
+    url = "https://packages.gurobi.com/13.0/gurobi13.0.3_armlinux64.tar.gz"
 [[Gurobi]]
-git-tree-sha1 = "6c7bda0a3e4f01e3250272d636df5d794d09a31e"
+git-tree-sha1 = "6ddcd56209f7ef444e804f79bda35338db856cc3"
 arch = "x86_64"
 os = "macos"
 
     [[Gurobi.download]]
-    sha256 = "63120962634fc4d36bbd1198b2a569ef5640441585d2e90a2e6533489f6a36e6"
-    url = "https://packages.gurobi.com/13.0/gurobi13.0.2_macos_universal2.tar.gz"
+    sha256 = "a71c8f4693e9d010a8239fd4a8a23e89abbe1508dc21dcffe639968469bc2979"
+    url = "https://packages.gurobi.com/13.0/gurobi13.0.3_macos_universal2.tar.gz"
 [[Gurobi]]
-git-tree-sha1 = "6c7bda0a3e4f01e3250272d636df5d794d09a31e"
+git-tree-sha1 = "6ddcd56209f7ef444e804f79bda35338db856cc3"
 arch = "aarch64"
 os = "macos"
 
     [[Gurobi.download]]
-    sha256 = "63120962634fc4d36bbd1198b2a569ef5640441585d2e90a2e6533489f6a36e6"
-    url = "https://packages.gurobi.com/13.0/gurobi13.0.2_macos_universal2.tar.gz"
+    sha256 = "a71c8f4693e9d010a8239fd4a8a23e89abbe1508dc21dcffe639968469bc2979"
+    url = "https://packages.gurobi.com/13.0/gurobi13.0.3_macos_universal2.tar.gz"
 [[Gurobi]]
-git-tree-sha1 = "c305abbb57768a0e95e2074cb1c1f1d263ce805b"
+git-tree-sha1 = "45eb98d3a5fa560e3bd5365025c14844c15be18d"
 arch = "x86_64"
 os = "windows"
 
     [[Gurobi.download]]
-    sha256 = "210d4208e494824abae1f3f2788c6873f5847c3f84c22c726f940e66c583ffb1"
-    url = "https://packages.gurobi.com/13.0/gurobi13.0.2_win64.tar.gz"
+    sha256 = "c22525d2292c5d6681a83b7f81892e5494ed1ed984a7d69db32fcc407b36c993"
+    url = "https://packages.gurobi.com/13.0/gurobi13.0.3_win64.tar.gz"
