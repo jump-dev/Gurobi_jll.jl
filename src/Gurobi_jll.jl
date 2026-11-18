@@ -10,7 +10,7 @@ using Base
 using Base: UUID
 import JLLWrappers
 
-const GUROBI_DIR = "gurobi1303"
+const GUROBI_DIR = "gurobi1400"
 
 JLLWrappers.@generate_main_file_header("Gurobi")
 
