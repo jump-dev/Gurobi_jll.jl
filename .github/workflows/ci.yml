@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: ['1.6', '1']
+        version: ['1.10', '1']
         os: [ubuntu-latest, macOS-latest, windows-latest]
         arch: [default]
         include:
@@ -29,7 +29,5 @@ jobs:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
       - uses: julia-actions/cache@v3
-        with:
-          cache-registries: ${{ !(matrix.version == '1.6' && matrix.os == 'windows-latest') }}
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
